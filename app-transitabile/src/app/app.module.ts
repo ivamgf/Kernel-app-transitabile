@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,9 @@ import { TermsComponent } from './views/pages/terms/terms.component';
 import { ForgotComponent } from './views/pages/forgot/forgot.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { DashtermsComponent } from './dash/dashterms/dashterms.component';
+import { HomeComponent } from './dash/home/home.component';
+// import { AuthService } from './views/pages/login/auth.service';
+// import { AuthGuardService } from './guards/authGuard.service';
 
 @NgModule({
   declarations: [
@@ -48,12 +53,17 @@ import { DashtermsComponent } from './dash/dashterms/dashterms.component';
     TermsComponent,
     ForgotComponent,
     RegisterComponent,
-    DashtermsComponent
+    DashtermsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
+  // providers: [AuthService, AuthGuardService],
   providers: [],
   bootstrap: [AppComponent]
 })

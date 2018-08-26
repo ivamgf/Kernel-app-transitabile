@@ -19,6 +19,7 @@ import { SupportComponent } from './dash/support/support.component';
 import { DashtermsComponent } from './dash/dashterms/dashterms.component';
 import { VehiclesComponent } from './dash/vehicles/vehicles.component';
 import { TermsComponent } from './views/pages/terms/terms.component';
+import { HomeComponent } from './dash/home/home.component';
 
 const routes: Routes = [
   {
@@ -43,61 +44,96 @@ const routes: Routes = [
       component: RegisterComponent
   },
   {
-      path: 'configs',
-      component: ConfigsComponent
-  },
-  {
-      path: 'contact',
-      component: ContactComponent
-  },
-  {
       path: 'dashboard-cli',
-      component: DashboardCliComponent
+      component: DashboardCliComponent,
+      children: [
+          {
+      path: '',
+      component: HomeComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
+  },
+          {
+      path: '',
+      component: ConfigsComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'deposit',
-      component: DepositComponent
+      path: '',
+      component: ContactComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'editcar',
-      component: EditcarComponent
+      path: '',
+      component: DepositComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'history',
-      component: HistoryComponent
+      path: '',
+      component: EditcarComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'payment',
-      component: PaymentComponent
+      path: '',
+      component: HistoryComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'profile',
-      component: ProfileComponent
+      path: '',
+      component: PaymentComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'report',
-      component: ReportComponent
+      path: '',
+      component: ProfileComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'resume',
-      component: ResumeComponent
+      path: '',
+      component: ReportComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'search',
-      component: SearchComponent
+      path: '',
+      component: ResumeComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'support',
-      component: SupportComponent
+      path: '',
+      component: SearchComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'dashterms',
-      component: DashtermsComponent
+      path: '',
+      component: SupportComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
   },
   {
-      path: 'vehicles',
-      component: VehiclesComponent
-  }
+      path: '',
+      component: DashtermsComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
+  },
+  {
+      path: '',
+      component: VehiclesComponent,
+      outlet: 'dash_router'
+      // canActivate: [AuthGuardService]
+  }  
+      ]
+      // canActivate: [AuthGuardService]
+  }  
 ];
 
 @NgModule({

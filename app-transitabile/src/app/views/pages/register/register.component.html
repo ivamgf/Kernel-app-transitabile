@@ -1,3 +1,7 @@
+<h1>
+  <strong><p class='card-font'>transitabile</p></strong>         
+</h1>
+
 <ul class="list-group">
   <li class="list-group-item">
   <div class="card-text">
@@ -59,12 +63,12 @@
 
         <div class="row input-style">
           <div class="form-group form-check check-style icheckbox_square-blue">
-            <input type="checkbox" class="form-check-input icheckbox_square-blue" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" id="validaTermos" [(ngModel)]="isGroupChecked" [ngModelOptions]='{standalone: true}'>
             <label class="form-check-label text-muted" for="exampleCheck1">
               Concordo com os <a href="#" routerLink="/terms">termos</a>
             </label>
           </div>
-          <button type="button" class="btn btn-primary btn-sm button-style">Enviar</button>
+          <button id="btnEnviar" type="button" class="btn btn-primary btn-sm button-style" [attr.disabled]="!disabled ? 'disabled' : null">Enviar</button>
           </div>                
         </div>        
         </form>  
@@ -91,3 +95,4 @@
   <span>Versão 4.1</span>
 </div>
 </div>
+
