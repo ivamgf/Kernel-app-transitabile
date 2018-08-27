@@ -22,7 +22,7 @@ export class SideComponent implements OnInit {
     //document.getElementById("main").style.marginLeft = "150px";
     }
   closeNav() {
-  document.getElementById("mySidenav").style.width = "10%";
+  document.getElementById("mySidenav").style.width = "15%";
   this.flag = localStorage.removeItem('Flag');
   this.open = document.getElementById("menu").style.display = 'none'; 
   this.open = document.getElementById("menu2").style.display = 'block';
