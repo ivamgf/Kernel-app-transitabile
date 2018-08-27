@@ -90,7 +90,7 @@ const routes: Routes = [
       // canActivate: [AuthGuardService]
   },
   {
-      path: '',
+      path: 'profile',
       component: ProfileComponent,
       outlet: 'dash_router'
       // canActivate: [AuthGuardService]
@@ -130,10 +130,10 @@ const routes: Routes = [
       component: VehiclesComponent,
       outlet: 'dash_router'
       // canActivate: [AuthGuardService]
-  }  
+  }
       ]
       // canActivate: [AuthGuardService]
-  }  
+  }
 ];
 
 @NgModule({
